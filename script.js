@@ -13,17 +13,18 @@ form.addEventListener("submit", async (e) => {
     ph: document.getElementById("ph").value
   };
 
-  
-  
   try {
-    const response = await fetch("http://localhost:5678/webhook/agri-advice", {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify(data)
-});
+    const response = await fetch(
+      "https://reliable-fulfillment.up.railway.app/webhook/agri-advice",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      }
+    );
 
-const result = await response.text();
-resultDiv.innerText = result;
+    const result = await response.json();
+    resultDiv.innerText = result.advice;
 
   } catch (error) {
     resultDiv.innerText = "❌ Error connecting to AI service";
