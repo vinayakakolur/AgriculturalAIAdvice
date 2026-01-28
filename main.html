@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Agri AI Advisor</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h1>🌱 Agriculture AI Advisor</h1>
+
+    <form id="agriForm">
+      <label>Crop Type</label>
+      <select id="crop" required>
+        <option value="">Select Crop</option>
+        <option>Paddy</option>
+        <option>Arecanut</option>
+        <option>Coconut</option>
+        <option>Cashew</option>
+      </select>
+
+      <label>City</label>
+      <select id="city" required>
+        <option value="">Select City</option>
+        <option>Kinnigoli</option>
+        <option>Belthangadi</option>
+        <option>Sulia</option>
+        <option>Naringana</option>
+      </select>
+
+      <label>Soil Moisture (%)</label>
+      <input type="number" id="moisture" required />
+
+      <label>Soil pH</label>
+      <input type="number" step="0.1" id="ph" required />
+
+      <button type="submit">Get AI Advice</button>
+    </form>
+
+    <div id="result"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
