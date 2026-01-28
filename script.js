@@ -15,10 +15,12 @@ form.addEventListener("submit", async (e) => {
 
   try {
     const response = await fetch(
-      "https://reliable-fulfillment.up.railway.app/webhook/agri-advice",
+      "https://norvikal.app.n8n.cloud/webhook/6092f3a1-b0f5-48a8-a94f-d808e707798c",
       {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json"
+        },
         body: JSON.stringify(data)
       }
     );
@@ -27,6 +29,7 @@ form.addEventListener("submit", async (e) => {
     resultDiv.innerText = result.advice;
 
   } catch (error) {
+    console.error(error);
     resultDiv.innerText = "❌ Error connecting to AI service";
   }
 });
